@@ -57,31 +57,34 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
 }
 
 export async function POST( request: Request) {
+  try {
+      const requestData = await request.json();
 
-    const requestData = await request.json();
+      const categories: Array<Category> = await getCategories();
+      const categoriesKeys: Array<string> = categories.filter(category => category.key !== '-').map(category => category.key);
 
-    const categories: Array<Category> = await getCategories();
-    const categoriesKeys: Array<string> = categories.filter(category => category.key !== '-').map(category => category.key);
+      const subcategories: Array<Subcategory> = await getSubcategories();
+      const subcategoriesKeys: Array<string> = subcategories.filter(subcategory => subcategory.key !== '-').map(subcategory => subcategory.key);
 
-    const subcategories: Array<Subcategory> = await getSubcategories();
-    const subcategoriesKeys: Array<string> = subcategories.filter(subcategory => subcategory.key !== '-').map(subcategory => subcategory.key);
+      const jobLevels: Array<ProfessionalLevel> = await getProfessionalLevels();
+      const jobLevelsKeys: Array<string> = jobLevels.map(jobLevel => jobLevel.key);
 
-    const jobLevels: Array<ProfessionalLevel> = await getProfessionalLevels();
-    const jobLevelsKeys: Array<string> = jobLevels.map(jobLevel => jobLevel.key);
+      const educationLevels: Array<Study> = await getStudies();
+      const educationLevelsKeys: Array<string> = educationLevels.map(educationLevel => educationLevel.key);
 
-    const educationLevels: Array<Study> = await getStudies();
-    const educationLevelsKeys: Array<string> = educationLevels.map(educationLevel => educationLevel.key);
-
-    const completion = await openai.createChatCompletion({
-        model: 'gpt-3.5-turbo',
-        messages: [
-            ...getInitialMessage(categoriesKeys, subcategoriesKeys, jobLevelsKeys, educationLevelsKeys),
-            {
-                role: ChatCompletionRequestMessageRoleEnum.User,
-                content: requestData.resume,
-            }
-        ]
-    })
-    
-   return NextResponse.json(completion.data.choices[0].message?.content ?? '');
+      const completion = await openai.createChatCompletion({
+          model: 'gpt-3.5-turbo',
+          messages: [
+              ...getInitialMessage(categoriesKeys, subcategoriesKeys, jobLevelsKeys, educationLevelsKeys),
+              {
+                  role: ChatCompletionRequestMessageRoleEnum.User,
+                  content: requestData.resume,
+              }
+          ]
+      })
+      
+    return NextResponse.json(completion.data.choices[0].message?.content ?? '');
+  } catch (error) {
+    return NextResponse.json(error, { status: 500 });
+  }
 }
