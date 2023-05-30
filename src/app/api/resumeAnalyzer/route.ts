@@ -21,7 +21,7 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
              Las experiencias laborales contendrám los siguientes atributos:
                 - company: Nombre de la empresa.
                 - job: Rol desarrollado en esa experiencia.
-                - description: Genera una descripción original y detallada en español del desarrollo de la experiencia laboral. Mínimo 50 palabras.
+                - description: Genera una descripción original y detallada en español del desarrollo de la experiencia laboral.
                 - startingDate: La fecha de inicio de esa experiencia.
                 - finishingDate: La fecha de fin de esa experiencia.
                 - onCourse: Si el candidato todavía está trabajando en esa experiencia profesional. El valor predeterminado es falso.
@@ -39,7 +39,7 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
                 - stillEnrolled: Si el candidato todavía está inscrito en este curso. El valor predeterminado es falso.
                 - institutionName: El nombre de la institución.
                 - hideEducation: true
-                - description: Genera una descripción original y detallada en español del desarrollo de la educación. Mínimo 50 palabras.
+                - description: Genera una descripción original y detallada en español del desarrollo de la educación.
                 - skills: Soft y Hard Skills desarrolladas en este plan educativo. Defínelas en dos palabras como máximo y en español.
                 - elementType: education
             `,
