@@ -27,7 +27,7 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
                 - onCourse: Si el candidato todavía está trabajando en esa experiencia profesional. El valor predeterminado es falso.
                 - category: Selecciona la categoría que guarde mayor relación con la descripción sobre el papel en esa experiencia. El array de categorías es el siguiente: ${categories}.
                 - level: Clasifica el nivel profesional para esa experiencia. Selecciona uno de los siguientes: ${jobLevels}.
-                - subcategories: Selecciona una o más subcategorías del siguiente: ${subcategories}.
+                - subcategories: Selecciona una o más subcategorías del siguiente: ${subcategories}. Mínimo 1.
                 - skills: Soft y Hard Skills desarrolladas en la experiencia. Defínelas en dos palabras como máximo y en español.
                 - elementType: job
              
