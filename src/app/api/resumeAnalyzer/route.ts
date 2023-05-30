@@ -21,14 +21,13 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
              Las experiencias laborales contendrám los siguientes atributos:
                 - company: Nombre de la empresa.
                 - job: Rol desarrollado en esa experiencia.
-                - description: Genera una descripción sen español sobre que consistía el papel en esa experiencia. Si no tienes datos suficientes,
-                  genera una descripción original según tu criterio sobre que se puede haber puesto en práctica en esta experiencia.
+                - description: Genera una descripción original en español del desarrollo de la experiencia laboral. Mínimo 20 palabras.
                 - startingDate: La fecha de inicio de esa experiencia.
                 - finishingDate: La fecha de fin de esa experiencia.
                 - onCourse: Si el candidato todavía está trabajando en esa experiencia profesional. El valor predeterminado es falso.
                 - category: Selecciona la categoría que guarde mayor relación con la descripción sobre el papel en esa experiencia. El array de categorías es el siguiente: ${categories}.
                 - level: Clasifica el nivel profesional para esa experiencia. Selecciona uno de los siguientes: ${jobLevels}.
-                - subcategories: Selecciona una o más subcategorías del siguiente array que guarden relación con la experiencia: ${subcategories}.
+                - subcategories: Selecciona una o más subcategorías del siguiente: ${subcategories}.
                 - skills: Soft y Hard Skills desarrolladas en la experiencia. Defínelas en dos palabras como máximo y en español.
                 - elementType: job
              
@@ -40,8 +39,7 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
                 - stillEnrolled: Si el candidato todavía está inscrito en este curso. El valor predeterminado es falso.
                 - institutionName: El nombre de la institución.
                 - hideEducation: true
-                - description: Genera una descripción en español sobre que consistía hiciste en hizo en este plan educativo. Si no tienes datos 
-                  suficientes, genera una descripción original según tu criterio de lo que se puede haber desarrollado en el plan educativo.
+                - description: Genera una descripción original en español del plan de estudios. Mínimo 20 palabras.
                 - skills: Soft y Hard Skills desarrolladas en este plan educativo. Defínelas en dos palabras como máximo y en español.
                 - elementType: education
             `,
