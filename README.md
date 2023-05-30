@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hackaton Infojobs 2023
+
+![](https://api.checklyhq.com/v1/badges/checks/d94b200b-8628-4f99-894f-e2dcf907f872?style=for-the-badge&theme=dark)
+[![](https://img.shields.io/badge/-Demo-lightgreen?style=for-the-badge&theme=dark)](https://infojobs-hackathon-production-9463.up.railway.app/)
 
 ## Introducción
 
@@ -22,10 +25,10 @@ Es importante mencionar que el proyecto actualmente se encuentra en una etapa de
 
 ## Características y funcionalidades
 
-- [x] Extracción de Educación y Experiencia Laboral: El sistema es capaz de analizar un currículum y extraer automáticamente la educación y la experiencia laboral del candidato.
-- [x] Generación de Descripciones Asociadas: Si el currículum no incluye descripciones detalladas de tareas o educación, el sistema generará automáticamente descripciones relevantes para cada experiencia o nivel educativo.
-- [x] Extracción de Hard Skills y Soft Skills: Además de la educación y experiencia laboral, se extraen y clasifican automáticamente las habilidades técnicas (hard skills) y habilidades interpersonales (soft skills) asociadas al currículum.
-- [ ] Adaptación de Datos a Infojobs: El proyecto se encarga de adaptar automáticamente la información extraída del currículum al formato requerido por Infojobs para una carga sin problemas en el perfil del usuario.
+- ✅ Extracción de Educación y Experiencia Laboral: El sistema es capaz de analizar un currículum y extraer automáticamente la educación y la experiencia laboral del candidato.
+- ✅ Generación de Descripciones Asociadas: Si el currículum no incluye descripciones detalladas de tareas o educación, el sistema generará automáticamente descripciones relevantes para cada experiencia o nivel educativo.
+- ✅ Extracción de Hard Skills y Soft Skills: Además de la educación y experiencia laboral, se extraen y clasifican automáticamente las habilidades técnicas (hard skills) y habilidades interpersonales (soft skills) asociadas al currículum.
+- ⚠️ Adaptación de Datos a Infojobs: El proyecto se encarga de adaptar automáticamente la información extraída del currículum al formato requerido por Infojobs para una carga sin problemas en el perfil del usuario. <font size='1'>*La funcionalidad de adaptación de datos a Infojobs no ha sido completada debido a dificultades en el formateo necesario para la carga. Se busca mejorar en futuras versiones del proyecto.*</font>
 
 ## Instalación
 
