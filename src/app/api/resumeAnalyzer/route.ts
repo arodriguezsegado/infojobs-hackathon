@@ -32,7 +32,8 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
                   El array de categorías es el siguiente: ${categories}.
                 - level: Clave de texto que clasifica el nivel profesional para esa experiencia.
                   Escoge uno de los siguientes: ${jobLevels}.
-                - subcategories: Genera una o más subcategorías, con máximo tres palabras separasdas con -, que guarden relación con la descripción del papel desarrollado en esa experincia y la categoría escogida.
+                - subcategories: Escoge una o más subcategorías que guarden relación con la descripción del papel desarrollado en esa experincia y la categoría escogida.
+                  Seleccionas las subcategorías de este array: ${subcategories}.
                 - skills: Soft y Hard Skills desarrolladas en la experiencia. Definidas como máximo en dos palabras y en español.
                 - elementType: Escribe el texto job.
              Definición de los parámetros de los objetos del array schooling:
@@ -73,7 +74,7 @@ export async function POST( request: Request) {
 
       const completion = await openai.createChatCompletion({
           model: 'gpt-3.5-turbo',
-          temperature: 0.5,
+          temperature: 0.8,
           messages: [
               ...getInitialMessage(categoriesKeys, subcategoriesKeys, jobLevelsKeys, educationLevelsKeys),
               {
