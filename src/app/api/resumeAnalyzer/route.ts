@@ -15,32 +15,32 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
         {
             role: ChatCompletionRequestMessageRoleEnum.System,
             content:
-            `Quiero que analices la educación y experincia laboral y me devuelvas un json válido con un array llamado workExperience, con
-             las experiencias laborales, y un array llamado schooling con la educación.
+             `I want you to analyze the education and work experience and return a valid json with an array called workExperience, 
+              with work experiences, and an array called schooling with education.
              
-             Las experiencias laborales contendrám los siguientes atributos:
-                - company: Nombre de la empresa.
-                - job: Rol desarrollado en esa experiencia.
-                - description: Descripción breve de las tareas realizadas. Si no encuentras ninguna generala según tu criterio.
-                - startingDate: La fecha de inicio de esa experiencia.
-                - finishingDate: La fecha de fin de esa experiencia.
-                - onCourse: Si el candidato todavía está trabajando en esa experiencia profesional. El valor predeterminado es falso.
-                - category: Selecciona la categoría que guarde mayor relación con la descripción sobre el papel en esa experiencia. El array de categorías es el siguiente: ${categories}.
-                - level: Clasifica el nivel profesional para esa experiencia. Selecciona uno de los siguientes: ${jobLevels}.
-                - subcategories: Selecciona una o más subcategorías del siguiente: ${subcategories}. Mínimo 1.
-                - skills: Soft y Hard Skills desarrolladas en la experiencia. Defínelas en dos palabras como máximo y en español. Si no encuentras ninguna generalas según tu criterio.
+              Work experiences will contain the following attributes:
+                - company: company name
+                - job: role developed in that experience in Spanish
+                - description: if there is no description, create a detailed one in Spanish related to the position and category and in Spanish
+                - startingDate: start date
+                - finishingDate: finish date
+                - onCourse: whether the candidate is still working on that professional experience. The default is false
+                - category: Select the category that is most closely related to the description on paper in that experience from the following array: ${categories}.
+                - level: Classify the professional level for that experience. Select one of the following: ${jobLevels}.
+                - subcategories: Select one or more subcategories from the following array that are related: ${subcategories}. Mínimo 1.
+                - skills: define them in two words maximum and in Spanish. If there aren't any, create some that are related.
                 - elementType: job
              
-              Los planes educativos tendrán los siguientes atributos:
-                - educationLevelCode: Selecciona el nivel educativo adecuado del siguiente array: ${educationLevels}.
-                - courseCode: Especialidad del nivel educativo. Por ejemplo: grado-ingenieria-informatica.
-                - startingDate: La fecha de inicio de esa experiencia.
-                - finishingDate: La fecha de fin de esa experiencia.
-                - stillEnrolled: Si el candidato todavía está inscrito en este curso. El valor predeterminado es falso.
-                - institutionName: El nombre de la institución.
+              Educational plans will have the following attributes:
+                - educationLevelCode: select the appropriate educational level from the following array: ${educationLevels}.
+                - courseCode: specialty of the educational level in Spanish. For example: grado-ingenieria-informatica.
+                - startingDate: start date
+                - finishingDate: finish date
+                - stillEnrolled: if the candidate is still enrolled in this course. The default is false
+                - institutionName: the name of the institution
                 - hideEducation: true
-                - description: Descripción breve de las tareas realizadas. Si no encuentras ninguna generala según tu criterio.
-                - skills: Soft y Hard Skills desarrolladas. Defínelas en dos palabras como máximo y en español. Si no encuentras ninguna generalas según tu criterio.
+                - description: if there is no description, create a detailed one in Spanish related to the educational level and specialty
+                - skills: define them in two words maximum and in Spanish. If there aren't any, create some that are related.
                 - elementType: education
             `,
         }

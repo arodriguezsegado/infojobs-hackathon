@@ -23,7 +23,7 @@ export const EducationDetails = ( { plan }: any) => {
 
             <div className="mt-6">
                 <p className="text-sm font-semibold leading-6 text-gray-900 text-wrap">Descripción</p>
-                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ plan.description }</p>
+                <p className="mt-1 h-full text-xs leading-5 text-gray-500">{ plan.description }</p>
             </div>
 
             <div className="mt-6">
