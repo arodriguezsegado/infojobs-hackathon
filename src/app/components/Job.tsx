@@ -9,7 +9,7 @@ export const Job = ( { index, experience, setDetails, isSelected }: { index: num
                 <div className="min-w-0 flex-auto ">
                     <p className="text-sm font-semibold leading-6 text-gray-900">{ experience.company }</p>
                     <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ experience.job }</p>
-                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ getDateFormattedInText(experience.startingDate, experience.finishingDate) }</p>
+                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ getDateFormattedInText(experience.startingDate, experience.finishingDate, experience.onCourse) }</p>
                 </div>
     
                 <div className="hidden sm:flex sm:flex-col sm:items-end">
