@@ -21,14 +21,14 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
              Las experiencias laborales contendrám los siguientes atributos:
                 - company: Nombre de la empresa.
                 - job: Rol desarrollado en esa experiencia.
-                - description: Descripción breve de las tareas realizadas. Si no hay suficientes datos, genera una.
+                - description: Descripción breve de las tareas realizadas. Si no encuentras ninguna generala según tu criterio.
                 - startingDate: La fecha de inicio de esa experiencia.
                 - finishingDate: La fecha de fin de esa experiencia.
                 - onCourse: Si el candidato todavía está trabajando en esa experiencia profesional. El valor predeterminado es falso.
                 - category: Selecciona la categoría que guarde mayor relación con la descripción sobre el papel en esa experiencia. El array de categorías es el siguiente: ${categories}.
                 - level: Clasifica el nivel profesional para esa experiencia. Selecciona uno de los siguientes: ${jobLevels}.
                 - subcategories: Selecciona una o más subcategorías del siguiente: ${subcategories}. Mínimo 1.
-                - skills: Soft y Hard Skills desarrolladas en la experiencia. Defínelas en dos palabras como máximo y en español.
+                - skills: Soft y Hard Skills desarrolladas en la experiencia. Defínelas en dos palabras como máximo y en español. Si no encuentras ninguna generalas según tu criterio.
                 - elementType: job
              
               Los planes educativos tendrán los siguientes atributos:
@@ -39,8 +39,8 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
                 - stillEnrolled: Si el candidato todavía está inscrito en este curso. El valor predeterminado es falso.
                 - institutionName: El nombre de la institución.
                 - hideEducation: true
-                - description: Descripción breve de las tareas realizadas. Si no hay suficientes datos, genera una.
-                - skills: Soft y Hard Skills desarrolladas. Defínelas en dos palabras como máximo y en español.
+                - description: Descripción breve de las tareas realizadas. Si no encuentras ninguna generala según tu criterio.
+                - skills: Soft y Hard Skills desarrolladas. Defínelas en dos palabras como máximo y en español. Si no encuentras ninguna generalas según tu criterio.
                 - elementType: education
             `,
         }
