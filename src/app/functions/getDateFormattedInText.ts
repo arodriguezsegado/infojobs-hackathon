@@ -1,4 +1,4 @@
-export const getDateFormattedInText = (startingDate: string, finishingDate: string): string => {
+export const getDateFormattedInText = (startingDate: string, finishingDate: string, onCouse: boolean): string => {
     try {
         
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -6,7 +6,7 @@ export const getDateFormattedInText = (startingDate: string, finishingDate: stri
         const startDateFormattedInText = `${monthNames[startingDateParsed.getMonth()]} de ${startingDateParsed.getFullYear()}`
         let result = `${startDateFormattedInText} - Actualmente`;
 
-        if(finishingDate !== '-') {
+        if(!onCouse && finishingDate !== null) {
             const finishingDateParsed: Date = new Date(Date.parse(finishingDate));
             const finishingDateFormattedInText = `${monthNames[finishingDateParsed.getMonth()]} de ${finishingDateParsed.getFullYear()}`;
             result = `${startDateFormattedInText} - ${finishingDateFormattedInText}`;

@@ -8,7 +8,7 @@ export const EducationDetails = ( { plan }: any) => {
             <div className="p-4 bg-emerald-100">
                 <p className="text-sm font-semibold leading-6 text-gray-900">{ plan.institutionName }</p>
                 <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ plan.courseCode }</p>
-                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ getDateFormattedInText(plan.startingDate, plan.finishingDate) }</p>
+                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ getDateFormattedInText(plan.startingDate, plan.finishingDate, plan.stillEnrolled) }</p>
             </div>
 
             <div className="mt-6">
@@ -19,6 +19,11 @@ export const EducationDetails = ( { plan }: any) => {
             <div className="mt-6">
                 <p className="text-sm font-semibold leading-6 text-gray-900 text-wrap">Especialidad</p>
                 <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ plan.courseCode }</p>
+            </div>
+
+            <div className="mt-6">
+                <p className="text-sm font-semibold leading-6 text-gray-900 text-wrap">Descripción</p>
+                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ plan.description }</p>
             </div>
 
             <div className="mt-6">

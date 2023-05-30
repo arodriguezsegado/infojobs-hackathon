@@ -1,4 +1,7 @@
 'use client';
+
+import { getDateFormattedInText } from "../functions/getDateFormattedInText";
+
 export const JobDetails = ( { job }: { job: any }) => {
 
     return (
@@ -6,7 +9,7 @@ export const JobDetails = ( { job }: { job: any }) => {
             <div className="p-4 bg-blue-100">
                 <p className="text-sm font-semibold leading-6 text-gray-900">{job.company}</p>
                 <p className="mt-1 truncate text-xs leading-5 text-gray-500">{job.job}</p>
-                <p className="mt-1 truncate text-xs leading-5 text-gray-500">Noviembre de 2021 - Actualmente (1 año y 6 meses)</p>
+                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{ getDateFormattedInText(job.startingDate, job.finishingDate, job.onCourse) }</p>
             </div>
 
             <div className="mt-6">

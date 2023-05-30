@@ -22,6 +22,7 @@ interface Education {
     finishingDate:         string;
     stillEnrolled:         boolean;
     institutionName:       string;
+    description:           string;
     hideEducation:         boolean;
     skills:                Array<string>;
     elementType:           string,
