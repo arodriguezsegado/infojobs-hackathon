@@ -71,7 +71,8 @@ Spanish and English (B1)`
 export const CopyAndPaste = ({ setResume }: { setResume: any }) => {
     return (
         <div className="w-full md:w-4/5 mx-auto">
-            <textarea 
+            <textarea
+                maxLength={2579}
                 rows={20} 
                 className="w-full p-4 text-sm text-gray-900 bg-white border-0 focus:ring-0" 
                 placeholder={placeholder}
