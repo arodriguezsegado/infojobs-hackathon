@@ -1,7 +1,6 @@
 const placeholder = 
 `Por favor, copia y pega el contenido de tu currículum aquí. Puedes obtener el texto de tu currículum desde un archivo PDF u otro archivo de texto. Por ejemplo:
 
-alejandrors13091993@gmail.com · (34) 653 02 38 80 · /in/arodriguezsegado/
 ALEJANDRO VICENTE RODRÍGUEZ SEGADO
 JUNIOR SOFTWARE DEVELOPER
 Enthusiastic about learning and continuous training. Proactive, curious and committed. Currently

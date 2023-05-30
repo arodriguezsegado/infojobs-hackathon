@@ -15,40 +15,32 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
         {
             role: ChatCompletionRequestMessageRoleEnum.System,
             content:
-            `Quiero que extraigas los tópicos expriencia laboral y educación de un currículum.
-             Quiero que pongas estos datos en un json válido con dos listas workExperiencia y schooling. workExperiencie contendrá objetos con
-             las experiencias laborales y schooling objetos con la educación.
-             A continuación, te defino los datos que contendrán los objetos del array workExprience y schooling:
-                - company: Nombre de la empresa donde se desarrolló la experincia. Máximo 150 caracteres.
-                - job: Rol desarrollado en esa experiencia. Máximo 150 caracteres.
-                - description: Breve explicación sobre que consistía el papel en esa experiencia. Máximo 4000 caracteres.
-                  Si no puedes generar una descripción a partir de los datos proporcionado, crea una que esté relacionada con la experiencia.
-                - startingDate: La fecha de inicio de esa experiencia. El formato de fecha debe estar en formato RFC_3339: aaaa-MM-dd.
-                - finishingDate: La fecha de fin de esa experiencia. El formato de fecha debe estar en formato RFC_3339: aaaa-MM-dd.
-                  Si no tiene fecha de fin, escribe el carácter -.
+            `Quiero que analices la educación y experincia laboral y me devuelvas un json válido con un array llamado workExperience, con
+             las experiencias laborales, y un array llamado schooling con la educación.
+             
+             Las experiencias laborales contendrám los siguientes atributos:
+                - company: Nombre de la empresa.
+                - job: Rol desarrollado en esa experiencia.
+                - description: Genera una descripción sobre que consistía el papel en esa experiencia.
+                - startingDate: La fecha de inicio de esa experiencia.
+                - finishingDate: La fecha de fin de esa experiencia.
                 - onCourse: Si el candidato todavía está trabajando en esa experiencia profesional. El valor predeterminado es falso.
-                - category: Hace referencia al sector donde la empresa desarrolla su actividad económica.
-                  Escoge la categoría que guarde mayor relación con la descripción sobre el papel en esa experiencia.
-                  El array de categorías es el siguiente: ${categories}.
-                - level: Clave de texto que clasifica el nivel profesional para esa experiencia.
-                  Escoge uno de los siguientes: ${jobLevels}.
-                - subcategories: Escoge una o más subcategorías que guarden relación con la descripción del papel desarrollado en esa experincia y la categoría escogida.
-                  Seleccionas las subcategorías de este array: ${subcategories}.
-                - skills: Soft y Hard Skills desarrolladas en la experiencia. Definidas como máximo en dos palabras y en español.
-                - elementType: Escribe el texto job.
-             Definición de los parámetros de los objetos del array schooling:
-                - educationLevelCode: Nivel de educación. Tienes que escoger el que esté más relacionado con la educación del siguiente array: ${educationLevels}.
-                - courseCode: Especialidad del nivel educativo. Quiero que como máximo contenga tres palabras separadas por el carácter -. 
-                  La primera de ellas será el educationLevelCode. Las otras dos tendrán que extraerse a través de la definición. 
-                  Por ejemplo: grado-ingenieria-informatica.
-                - startingDate: La fecha de inicio de esa experiencia. El formato de fecha debe estar en formato RFC_3339: aaaa-MM-dd.
-                - finishingDate: La fecha de fin de esa experiencia. El formato de fecha debe estar en formato RFC_3339: aaaa-MM-dd. 
-                  Si el candidato todavía está trabajando en esa experiencia profesional. El valor predeterminado es falso.
+                - category: Selecciona la categoría que guarde mayor relación con la descripción sobre el papel en esa experiencia. El array de categorías es el siguiente: ${categories}.
+                - level: Clasifica el nivel profesional para esa experiencia. Selecciona uno de los siguientes: ${jobLevels}.
+                - subcategories: Selecciona una o más subcategorías del siguiente array que guarden relación con la experiencia: ${subcategories}.
+                - skills: Soft y Hard Skills desarrolladas en la experiencia. Defínelas en dos palabras como máximo y en español.
+                - elementType: job
+             
+              Los planes educativos tendrán los siguientes atributos:
+                - educationLevelCode: Selecciona el nivel educativo adecuado del siguiente array: ${educationLevels}.
+                - courseCode: Especialidad del nivel educativo. Por ejemplo: grado-ingenieria-informatica.
+                - startingDate: La fecha de inicio de esa experiencia.
+                - finishingDate: La fecha de fin de esa experiencia.
                 - stillEnrolled: Si el candidato todavía está inscrito en este curso. El valor predeterminado es falso.
-                - institutionName: El nombre de la institución donde se realizo la educación.
+                - institutionName: El nombre de la institución.
                 - hideEducation: true
-                - Description: Breve explicación sobre que se aprendio en este plan educativo. 
-                - skills: Soft y Hard Skills desarrolladas ene este plan educativo. Definidas como máximo en dos palabras y en español.
+                - description: Breve explicación sobre que se aprendio en este plan educativo. 
+                - skills: Soft y Hard Skills desarrolladas en este plan educativo. Defínelas en dos palabras como máximo y en español.
                 - elementType: education
             `,
         }
@@ -57,7 +49,7 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
 }
 
 export async function POST( request: Request) {
-  try {
+ 
       const requestData = await request.json();
 
       const categories: Array<Category> = await getCategories();
@@ -72,9 +64,10 @@ export async function POST( request: Request) {
       const educationLevels: Array<Study> = await getStudies();
       const educationLevelsKeys: Array<string> = educationLevels.map(educationLevel => educationLevel.key);
 
+    try {
       const completion = await openai.createChatCompletion({
           model: 'gpt-3.5-turbo',
-          temperature: 0.8,
+          temperature: 0.7,
           messages: [
               ...getInitialMessage(categoriesKeys, subcategoriesKeys, jobLevelsKeys, educationLevelsKeys),
               {
@@ -83,9 +76,9 @@ export async function POST( request: Request) {
               }
           ]
       })
-      
+
     return NextResponse.json(completion.data.choices[0].message?.content ?? '');
-  } catch (error) {
-    return NextResponse.json(error, { status: 500 });
+  } catch (error: any) {
+    return NextResponse.json(error.message, { status: 500 });
   }
 }
