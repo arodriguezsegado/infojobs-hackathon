@@ -16,7 +16,7 @@ export const Stepper = ({ step }: { step: number }) => {
                 </span>
                 <span>
                     <h3 className="text-md lg:text-xl xl:text-2xl leading-tight">Visualiza tu currículum</h3>
-                    <p className="text-sm lg:text-md xl:text-lg hidden xl:block">Observa una vista previa formateadad de tu currículum</p>
+                    <p className="text-sm lg:text-md xl:text-lg hidden xl:block">Observa una vista previa formateada de tu currículum</p>
                 </span>
             </li>
             <li className={`flex items-center ${ step === 3 ? 'text-blue-600' : 'text-gray-500' } space-x-2.5 w-1/3`}>
