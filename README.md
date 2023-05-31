@@ -39,6 +39,14 @@ Es importante mencionar que el proyecto actualmente se encuentra en una etapa de
 5. Una vez instaladas las dependencias, puedes ejecutar el proyecto con el siguiente comando: **npm run dev**.
 6. Accede a la aplicación en tu navegador utilizando la URL proporcionada en la línea de comandos.
 
+## Variables de Entorno
+
+Este proyecto utiliza variables de entorno para almacenar información confidencial, como claves de API. Asegúrate de configurar correctamente las siguientes variables de entorno antes de ejecutar la aplicación.
+### OPENAI_ACCESS_TOKEN
+- Descripción: Clave de acceso para la API de OpenAI.
+- Obtención: Para obtener una clave de acceso válida, debes registrarte en OpenAI y generar una clave en la consola de desarrolladores.
+- Uso: Esta variable de entorno se utiliza para autenticar las solicitudes a la API de OpenAI en este proyecto. Asegúrate de proporcionar la clave de acceso correcta para que la aplicación funcione correctamente.
+
 ## Licencia
 
 El proyecto se distribuye bajo una licencia de código abierto y libre uso.
