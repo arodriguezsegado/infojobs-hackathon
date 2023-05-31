@@ -27,8 +27,8 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
                 - onCourse: whether the candidate is still working on that professional experience. The default is false
                 - category: Select the category that is most closely related to the description on paper in that experience from the following array: ${categories}.
                 - level: Classify the professional level for that experience. Select one of the following: ${jobLevels}.
-                - subcategories: Select one or more subcategories from the following array that are related: ${subcategories}. Mínimo 1.
-                - skills: define them in two words maximum and in Spanish. If there aren't any, create some that are related.
+                - subcategories: Select one or more subcategories from the following array that are related: ${subcategories}. Minimum 1. Returns them in an array.
+                - skills: define them in two words maximum and in Spanish. If there aren't any, create some that are related. Returns them in an array.
                 - elementType: job
              
               Educational plans will have the following attributes:
@@ -40,7 +40,7 @@ const getInitialMessage = (categories: Array<string>, subcategories: Array<strin
                 - institutionName: the name of the institution
                 - hideEducation: true
                 - description: if there is no description, create a detailed one in Spanish related to the educational level and specialty
-                - skills: define them in two words maximum and in Spanish. If there aren't any, create some that are related.
+                - skills: define them in two words maximum and in Spanish. If there aren't any, create some that are related. Returns them in an array.
                 - elementType: education
             `,
         }

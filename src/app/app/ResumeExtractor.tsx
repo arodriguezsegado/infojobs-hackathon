@@ -26,6 +26,7 @@ export const ResumeExtractor = () => {
           } else {
             try {
               let dataParsed = JSON.parse(data);
+              console.log(data)
               const { workExperience, schooling }: { workExperience: Array<Experience>, schooling: Array<Education> } = dataParsed;
               let resumeBuilder: Array<Experience|Education> = workExperience;
               resumeBuilder = resumeBuilder.concat(schooling);
