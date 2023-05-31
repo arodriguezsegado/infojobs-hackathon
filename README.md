@@ -1,5 +1,3 @@
-![](https://api.checklyhq.com/v1/badges/checks/d94b200b-8628-4f99-894f-e2dcf907f872?style=for-the-badge&theme=dark)
-
 [![](https://img.shields.io/badge/-Demo-lightgreen?style=for-the-badge&theme=dark)](https://infojobs-hackathon-production-9463.up.railway.app/)
 
 # Tu currículum en InfoJobs con un toque mágico
@@ -40,6 +38,14 @@ Es importante mencionar que el proyecto actualmente se encuentra en una etapa de
 4. Ejecuta el siguiente comando para instalar las dependencias: **npm install**.
 5. Una vez instaladas las dependencias, puedes ejecutar el proyecto con el siguiente comando: **npm run dev**.
 6. Accede a la aplicación en tu navegador utilizando la URL proporcionada en la línea de comandos.
+
+## Variables de Entorno
+
+Este proyecto utiliza variables de entorno para almacenar información confidencial, como claves de API. Asegúrate de configurar correctamente las siguientes variables de entorno antes de ejecutar la aplicación.
+### OPENAI_ACCESS_TOKEN
+- Descripción: Clave de acceso para la API de OpenAI.
+- Obtención: Para obtener una clave de acceso válida, debes registrarte en OpenAI y generar una clave en la consola de desarrolladores.
+- Uso: Esta variable de entorno se utiliza para autenticar las solicitudes a la API de OpenAI en este proyecto. Asegúrate de proporcionar la clave de acceso correcta para que la aplicación funcione correctamente.
 
 ## Licencia
 
